@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8.html</title>
+    <style>
+        table {  /* table은 tbody만 적용된다..(thead와 tfoot에는 적용x) */
+            width: 400px;
+            height: 300px;
+            border-collapse: collapse;  /* cellpadding과 같은 효과 */
+        }
+        th, td{
+            border: 1px solid gray;
+            text-align: center;
+            padding: 20px;
+            color: blue
+        }
+        tr:nth-child(2n) {
+            background-color: gray;
+        }
+        tr:nth-child(2n+1) {
+            background-color: pink;
+        }
+        th {  /* 테이블에는 제목부분에 색을 따로 지정해준다. */
+            background-color: blueviolet;
+        }
+        tr:hover {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <h2>표 연습</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>1</th>
+            <th class="dd">2</th>
+            <th>3</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2</td>
+            <td class="dd">5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td class="dd">8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td class="dd">5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td class="dd">8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td class="dd">5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td class="dd">8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td class="dd">8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td class="dd">8</td>
+            <td>9</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>10</td>
+            <td class="dd">11</td>
+            <td>12</td>
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

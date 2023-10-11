@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test9.html</title>
+    <style>
+        ul li {
+            list-style: none;
+            background-color: tan;
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        ul li:first-child { /* first-child 첫번째 만나는 자식.. */
+            background-color: brown;
+        }
+        ul li:last-child { /* last-child 마지막 자식.. */
+            background-color: blueviolet;
+        }
+        ul li:nth-child(2n+1) { /* 2n == 짝수  / 2n+1 == 홀수 */
+            background-color: cadetblue;
+        }
+        ul li:nth-child(2n) { /* 2n == 짝수  / 2n+1 == 홀수 */
+            background-color: darkcyan;
+        }
+        ul li:nth-child(5) {  /*특정 위치도 선택 가능*/
+            background-color: green;
+        }
+        ul li:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h2>목록태그 CSS적용하기</h2>
+    <ul>
+        <li>제목</li>
+        <li>가</li>
+        <li>나</li>
+        <li>다</li>
+        <li>라</li>
+        <li>마</li>
+        <li>바</li>
+        <li>사</li>
+        <li>아</li>
+        <li>자</li>
+        <li>차</li>
+        <li>카</li>
+        <li>타</li>
+        <li>파</li>
+        <li>하</li>
+        <li>비고</li>
+    </ul>
+</body>
+</html>
