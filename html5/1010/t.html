@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>프레임 연습하기(html4에만 존재)</title>
+</head>
+  <!-- 프레임은 <body>가 필요 없다. -->
+<frameset rows = "20%,80%" frameborder="0"> <!-- frameborder="0" 프레임의 선을 지운다. --> <!-- 행으로 쪼갤려면  rows-->
+  <frame src="t1.html" name="header" noresize> <!-- noresize 사이즈 조정 안됨(설정한 사이즈로 고정) --><!-- 프레임에 이름을 붙인다. -->
+  <frameset cols = "180px,*"> <!-- 180px과 * 나머지-->
+    <frame src="t2.html" name="left" noresize>
+    <frame src="t3.html" name="content">
+  </frameset>
+  <noframes> <!-- 프레임을 지원하지 않을 떄 사용 -->
+    <p>이 페이지를 보려면 프레임을 지우너하는 브라우저가 필요합니다.</p>  
+  </noframes>
+</frameset>
+</html>

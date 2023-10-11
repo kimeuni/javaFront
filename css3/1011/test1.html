@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test1.html</title>
+    <style>
+        .container{
+            line-height: 30pt;
+        }
+        .title{
+            background-color: aqua;
+        }
+        input[type="text"] {   /* input 태그 중 속성이 type="text"일 경우만.. */
+            color: blue;
+            background-color: yellow;
+            font-size: 15pt;
+            padding: 50px 30px 10px 5px; /* 3개 적을 시 위(50px)오른쪽(30px) 아래(10px) 오른쪽(30px)로 지정된다. */ /* 50px 30px 2개만 적으면 상하(50px) 좌우(30px)이 적용됐다..(방향은 시계방향 위(1번)오른쪽(2)아래(3)왼쪽(4) */ /* 안쪽 셀 크기 조정..(가상의 선을 기준으로 안쪽) */
+            margin: 10px; /* 가상의 선을 기준으로 밖이 마진(다른 블럭과의 거리를 벌리고 싶을 때 사용) */
+        }
+        input[type="password"] {
+            color:yellow;
+            background-color: blue;
+            font-size: 15pt;
+            padding:15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form태그와 CSS</h2>
+    <form>
+        <div class="container"> <!-- 컨텐트의 내용을 담아주는 곳을 container(컨테이너)라고 많이 사용한다. /안써도 괜찮지만 보통은 적는다구 함! 한 그룹으로 보고싶어서~ -->
+            <div id="gid"> <!-- 그룹의 의미로 g를 붙여서 gid라고 적음 / id는 1번만 써야하기 때문에 밑에 input에 적은 것과 다르게 적는다! -->
+                <span><label for="mid" class="title">아이디</label></span>
+                <input type="text" name="mid" id="mid" placeholder="아이디를 입력하세요." autofocus/>
+            </div>
+            <div id="gpwd">
+                <label for="pwd" class="title">비밀번호</label>
+                <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력하세요."/>
+            </div>
+            <div id="gage">
+                <label for="age" class="title">나이</label>
+                <input type="number" name="age" id="age" placeholder="나이를 입력하세요." value="20" min="1" max="99" maxlenhth="2" style="width: 80px;"/> <!-- number 타입은 size를 사용할 수 없기 때문에 style을 사용하여 크기를 늘려준다.-->
+            </div>
+            <div id="gaddress">
+                <label for="address" class="title">주소</label>
+                <input type="text" name="address" id="address" placeholder="주소를 입력하세요." size="30"/>
+            </div>
+            <div>
+                <input type="submit" value="전송"/>
+                <input type="reset" value="다시입력"/>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

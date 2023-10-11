@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3.html</title>
+    <style>
+        body{
+            margin: 0px; /* 얘는 꼭 줘야하지만, */
+            padding: 0px; /* 얘는 안 적어도 괜찮 */
+        }
+        .box {
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid gray;
+        }
+        #box1 {
+            background-color: green;
+        }
+        #box2 {
+            background-color: orange;
+            width: 300px;
+        }
+        #box3 {
+            background-color: brown;
+            width: 300px;
+            height: 100px;
+            /* padding: 50px; */
+            line-height: 100px; /* 수직 간격을 맞추기 위해 */
+            text-align: center; /* 글자를 센터로 */
+        }
+        #box4 {
+            background-color: pink;
+            margin: 0 auto; /* 위아래는 0 좌우는 auto로 해서 자동으로 설정해 달라는 의미 */
+            width: 300px;
+            height: 100px;
+            font-size: 20pt;
+            line-height: 100px;
+            text-align: right;
+        }
+        #box5 {
+            background-color: skyblue;
+            width: 300px;
+            height: 100px;
+            border-style: double; /* border선의 스타일을 double 2줄로... */
+            border-width: 10px; /* 선의 두께 */
+        }
+        #box6 {
+            background-color: rgb(227, 250, 189);
+            width: 300px;
+            height: 100px;
+            border-width: 3px;
+            /* border-radius: 10px; 선을 부드럽게..  */
+            /* border-radius: 30px 0px; 선을 부드럽게..  */
+            border-radius: 30px 30px 0px 0px; /* (왼쪽 오른쪽 아래오른쪽 아래왼쪽 순서...) 선을 부드럽게..  */
+        }
+        #box7 {
+            background-color: rgb(50, 211, 136);
+            width: 300px;
+            height: 100px;
+            border-width: 2px;
+            overflow: auto;  /* 박스안에 들어가 있는 글자가 박스에서 벗어났을 때 스크롤바가 생겨서 담을 수 있도록 한다.. */
+            /* overflow: hidden;  박스 크기에 벗어난 단어는 보이지 않도록 한다.. */
+            padding: 5px;
+        }
+        #box8 {
+            background-color: rgb(70, 132, 224);
+            width: 300px;
+            height: 100px;
+            border-width: 2px;
+            font-size: 25px;
+            font-weight: bolder; /*폰드 두껍게*/
+            color: red;
+            text-shadow: 5px 3px 3px gray; /* x축, y축, 흐림정도, 그림자 색상 */
+        }
+        #box9 {
+            background-color: rgb(191, 213, 247);
+            width: 300px;
+            height: 100px;
+            text-transform: lowercase; /* 소문자 */
+        }
+        #box10 {
+            background-color: rgb(255, 232, 129);
+            width: 300px;
+            height: 100px;
+            text-transform: uppercase;  /* 대문자 */
+            font-size: 25pt;
+            font-family: 'Times New Roman', Times, serif;  /* 글씨체 변경 */
+        }
+        #box11 {
+            background-color: rgb(206, 135, 185);
+            width: 300px;
+            height: 100px;
+            text-decoration: line-through;  /* 문자를 관통하는 가운데에 선이 생김 */
+        }
+        #box12 {
+            background-color: rgb(206, 135, 185);
+            width: 200px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Box Layout</h2>
+    <div class="box" id="box1">1.안녕하세요</div>
+    <div class="box" id="box2">2.안녕하세요</div>
+    <div class="box" id="box3">3.안녕하세요</div>
+    <div class="box" id="box4">4.안녕하세요</div>
+    <div class="box" id="box5">5.안녕하세요</div>
+    <div class="box" id="box6">6.안녕하세요</div>
+    <div class="box" id="box7">
+        71.안녕하세요<br/>
+        72.안녕하세요<br/>
+        73.안녕하세요<br/>
+        74.안녕하세요<br/>
+        75.안녕하세요<br/>
+        76.안녕하세요<br/>
+        77.안녕하세요 77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요77.안녕하세요<br/>
+        78.안녕하세요<br/>
+        79.안녕하세요<br/>
+        80.안녕하세요<br/>
+    </div>
+    <div class="box" id="box8">8.안녕하세요</div>
+    <div class="box" id="box9">9.Good Morning</div>
+    <div class="box" id="box10">10.Good Morning</div>
+    <div class="box" id="box11">11.Good Morning</div>
+    <div class="box" id="box12">
+        12.Good Morning<br/>
+        <img src="../../images/1.png" width="300px"/>
+    </div>
+</body>
+</html>

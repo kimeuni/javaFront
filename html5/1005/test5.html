@@ -1,0 +1,159 @@
+<html>
+<head>
+  <title>표 연습</title>
+</head>
+<body>
+  <h2>1.길동이네 가족소개</h2>
+  <table border>
+    <tr> <!-- 행은 tr-->
+      <td>관계</td> <!-- 열은 td-->
+      <td>성명</td> <!-- 열은 td-->
+      <td>나이</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>아버지</td> <!-- 열은 td-->
+      <td>홍장군</td> <!-- 열은 td-->
+      <td>62</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>어머니</td> <!-- 열은 td-->
+      <td>김말숙</td> <!-- 열은 td-->
+      <td>57</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>동생</td> <!-- 열은 td-->
+      <td>홍길자</td> <!-- 열은 td-->
+      <td>22</td> <!-- 열은 td-->
+    </tr>
+  </table>
+  <hr/>
+  <h2>2.길동이네 가족소개</h2>
+  <table border width="400px" height="350px" align = "center"> <!-- 표가 가운데로 감.-->
+    <caption><font size = "5"><b>길동이네 가족소개</b></font></caption>
+    <tr> <!-- 행은 tr-->
+      <th align = "center">관계</th> <!-- td align = "center"관계"만 가운데 정렬-->
+      <th>성명</th> <!-- th는 가운데 정렬하면서 글자가 굵어짐-->
+      <th>나이</th> 
+    </tr>
+    <tr align = "center"> <!-- 2번째 행에 들어가있는 열문장들(아버지,홍장군,62) 전부 가운대 정렬-->
+      <td>아버지</td> <!-- 열은 td-->
+      <td>홍장군</td> <!-- 열은 td-->
+      <td>62</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>어머니</td> <!-- 열은 td-->
+      <td>김말숙</td> <!-- 열은 td-->
+      <td>57</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>동생</td> <!-- 열은 td-->
+      <td>홍길자</td> <!-- 열은 td-->
+      <td>22</td> <!-- 열은 td-->
+    </tr>
+    <!--<caption><font size = "5"><b>길동이네 가족소개</b></font></caption>    위치에 상관없이 위에 나온다.-->
+  </table>
+  <hr/>
+  <h2>3.길동이네 가족소개</h2>
+  <table border="10px" bordercolor ="red" cellpadding = "20px" cellspacing="6px" bgcolor = "skybule"> <!-- cellpadding = "20px" 가장큰글자를 기준으로 좌우상하가 20px 멀어짐 / cellspacing="6px" 셀과 셀의 여백을 6px 줌 / bgcolor = "skybule" 배경색을 하늘색으로 줌-->
+    <tr> <!-- 행은 tr-->
+      <td>관계</td> <!-- 열은 td-->
+      <td>성명</td> <!-- 열은 td-->
+      <td>나이</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>아버지</td> <!-- 열은 td-->
+      <td>홍장군</td> <!-- 열은 td-->
+      <td>62</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>어머니</td> <!-- 열은 td-->
+      <td>김말숙</td> <!-- 열은 td-->
+      <td>57</td> <!-- 열은 td-->
+    </tr>
+    <tr> <!-- 행은 tr-->
+      <td>동생</td> <!-- 열은 td-->
+      <td>홍길자</td> <!-- 열은 td-->
+      <td>22</td> <!-- 열은 td-->
+    </tr>
+  </table>
+  <hr/>
+  <h2>4.길동이네 가족소개</h2>
+  <table border = 0 cellpadding="20px" cellspacing="0px">
+    <tr bgcolor = "pink"> 
+      <td>관계</td> 
+      <td>성명</td> 
+      <td>나이</td> 
+    </tr>
+    <tr bgcolor = "yellow">
+      <td>아버지</td> 
+      <td bgcolor="red">홍장군</td> 
+      <td>62</td> 
+    </tr>
+    <tr bgcolor = "red"> 
+      <td>어머니</td> 
+      <td>김말숙</td> 
+      <td>57</td> 
+    </tr>
+    <tr bgcolor = "gray">
+      <td>동생</td> 
+      <td>홍길자</td> 
+      <td>22</td> 
+    </tr>
+  </table>
+  <hr/>
+  <h2>5.길동이네 가족소개</h2>
+  <table border cellpadding="20px" cellspacing="0px">
+    <tr bgcolor = "pink"> 
+      <td>관계</td> 
+      <th colspan="2">성명</th> <!-- colspan="2" 열 합치기 (2개/ 성명과 나이있는 부분)-->
+      <!--<td>나이</td>--> 
+    </tr>
+    <tr> 
+      <td rowspan = "2">아버지</td> <!-- rowspan="2" 행 합치기-->
+      <td>홍장군</td> 
+      <td>62</td> 
+    </tr>
+    <tr> 
+      <!--<td>어머니</td>--> 
+      <td>김말숙</td> 
+      <td>57</td> 
+    </tr>
+    <tr> 
+      <td>동생</td> 
+      <td>홍길자</td> 
+      <td>22</td> 
+    </tr>
+  </table>
+  <hr/>
+  <h2>6.길동이네 가족소개</h2>
+  <table border cellpadding="10px" cellspacing="10px">
+    <tr> 
+      <td>관계</td> 
+      <td>성명</td> 
+      <td>나이</td> 
+      <td>사진</td>
+    </tr>
+    <tr> 
+      <td>아버지</td> 
+      <td>홍장군</td> 
+      <td>62</td> 
+      <td><img src = "../../images/1.png" width="150px" /</td>
+    </tr>
+    <tr> 
+      <td>어머니</td> 
+      <td>김말숙</td> 
+      <td>57</td> 
+      <td><img src = "../../images/2.jpg" width="150px" /</td>
+    </tr>
+    <tr> 
+      <td>동생</td> 
+      <td>홍길자</td> 
+      <td>22</td> 
+      <td><img src = "../../images/3.jpg" width="150px" /</td>
+    </tr>
+  </table>
+  <hr/>
+  <hr/>
+  <a href="test6.html">돌아가기</a>
+</body>
+</html>

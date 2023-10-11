@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <style>
+        /* 전체 셀렉터(선택자) */
+        *{
+            font-family: "굼서","돋움"; /* 굼서 폰트가 없으면... 돋음 폰드를 써달라.. 만약 둘 다 없으면 기본폰트로 나온다.*/
+            font-size: 10pt;
+        }
+        /* 바디 셀레터에 있는 것의 포인트 크기를 10pt로 한다...*/
+        /* body{
+            font-size: 10pt;
+        } */
+        /* p 셀렉터에 있는 것의 포인트 크기를 12pt로 한다.... */
+        p{
+            font-size: 12pt; /* 웹사이트를 보면 10pt? 12pt? 가 많다.*/
+        }
+        #mbc {  /* 아이디 셀렉터(선택자) */ /* id가 mbc인 곳의 글자색을 red로 바꾼다... / id는 #을 사용 */
+            color : red;
+        }
+        .mbc {  /*클래스 셀렉터(선택자)*/
+            color : yellow;
+        }
+        p.mbc {  /* 혼합 셀렉터(선택자)(★많이 사용★) *//* p태그에 class명 mbc를 사용할 때 글자색을 "주황색"으로 한다. */
+            color : orange;
+        }
+        .seoul{ /* class는 . 을 사용 */
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h2>스타일 혼용 사용예제</h2>
+    <p>1.안녕하세요.</p>
+    <p id="mbc">2.안녕하세요.</p>
+    <p>3.안녕하세요.</p>
+    <p class="seoul">4.안녕하세요.</p>
+    <p>5.안녕하세요.</p>
+    <p class="seoul">6.안녕하세요.</p>
+    <p>7.안녕하세요.</p>
+    <p class="seoul">8.안녕하세요.</p>
+    <p>9.안녕하세요.</p>
+    <p class="mbc">10.안녕하세요.</p>
+    <h3 class="mbc">11.안녕하세요.</h3>
+
+    <!-- id와 class의 차이점 -->
+    <!-- 지금은 차이가 없어보이지만, 현재 작업하는 하나의 페이지 안에서 같은 속성으로 여러개 주고 싶을 때는 무조건 "class"를 사용해야 한다. -->
+    <!-- 1번 나오는 것을 class로 사용해도 ㄱㅊ / 굳이 여러 속성에 사용할때만 사용 안해도 ㄱㅊ -->
+    <!-- id는 현재 페이지에서 딱 1번만 적용 할 것에만 사용한다. -->
+
+    <!-- id와 class는 별개이기 때문에, 같은 변수명(?)을 사용해도 괜찮다. -->
+</body>
+</html>

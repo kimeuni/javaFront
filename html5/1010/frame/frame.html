@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>프레임 스스로 만들기 연습</title>
+  <frameset rows = "180px,*,120px"frameborder="0">
+    <frame src="t1.html" name="top" noresize>
+    <frameset cols="150px,*,150px"frameborder="0">
+      <frame src="t3.html" name="left" noresize scrolling="no"> <!-- scrolling="no"를 하면 스크롤이 안보인다. -->
+      <frame src="t5.html" name="content" noresize>
+      <frame src="t4.html" name="right" noresize scrolling="no">
+    </frameset>
+    <frame src="t2.html" name="bottom">
+  </frameset>
+</head>
+</html>

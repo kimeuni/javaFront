@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>test7_form.html</title>
+</head>
+<body>
+  <h2>폼태그 연습</h2>
+  <hr/>
+  <h2>회 원 가 입</h2>
+  <form name="myform" method="post" action="서버에서받을 파일명.jsp">
+    <fieldset>
+    <legend>회원가입1</legend>  <!-- 제목이 들어간다. --> 
+      <ul>
+        <li>
+          <label for="irum">이름</label>
+          <input type="text" name="irum" id="irum"/>
+        </li>
+        <li>
+          <label for="email">메일주소</label>
+          <input type="text" name="email" id="email"/>
+        </li>
+        <li>
+          <input type="button" value ="가입하기"/>
+        </li>
+      </ul>
+    </fieldset>
+    <fieldset>
+    <legend>추가입력</legend>  <!-- 제목이 들어간다. --> 
+      <label for="gender">성별</label>
+      <input type="radio" name="gender" id="gender" value="남자" checked/>남자
+      <input type="radio" name="gender" id="gender" value="여자"/>여자
+      <input type="button" value ="가입하기2"/>
+    </fieldset>
+  </form>
+  <br/><br/><br/><br/><br/>
+</body>
+</html>

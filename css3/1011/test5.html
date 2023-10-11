@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <style>
+        .box {
+            /* width: 300px; */
+            height: 200px;
+            border: 1px solid gray;
+        }
+        #box1 {
+            width: 300px;  /* box1이 300영역을 가지고 물에 둥둥 떠있다는 느낌! (자기자리에 있지 않고 위로 올라온다.. / box1이 위에 떠있기 때문에 그 옆에(남는 공간에) box2나 box3이 자리를 차지하게 된다.*/
+            float: left; /* left와 right밖에 없음 */
+            background-color: aqua;
+        }
+        #box2 {
+            width: 300px;  /* box1이 300영역을 가지고 물에 둥둥 떠있다는 느낌! */
+            float: right;
+            background-color: burlywood; 
+        }
+        #box3 {
+            clear: both; /* clear left, clear right 합쳐진게 clear both (float에 영향을 받지 않게 함..)  */
+            background-color: rgb(202, 219, 184);
+        }
+        #box4 {
+            width: 300px; 
+            float: left; 
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h2>float 연습</h2>
+    <div class="box" id="box1">Box1 연습</div>
+    <div class="box" id="box2">Box2 연습</div>
+    <div class="box" id="box3">Box3 연습</div>
+    <div class="box" id="box4">Box4 연습</div>
+    <div class="box" id="box5">Box5 연습</div>
+</body>
+</html>
