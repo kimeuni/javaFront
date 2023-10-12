@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test8.html</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px
+        }
+        /* .container {
+            display: grid;
+
+            // test9.html에서 사용하는 방법보다는 이게 더 쉽다고 함.. (선생님 피셜)
+            grid-template-areas: 영역 <<틀>>만들기 
+            'item1 item1 item1'  첫번째 행에 item1이 3번 들어가도록
+            'item2 item2 item3'
+            'item4 item5 item5';
+
+            grid-template-rows: repeat(3, 200px);
+            grid-template-columns: repeat(3, 200px);
+            height: 200px;
+
+            width: 600px;  200px이 3덩어리 이기 때문에 600px 을 주고 margin: 0 auto을 해야 가운데 정렬이 된다.
+            margin: 0 auto;
+        } */
+
+        /* 위에 적은 container 클래스와 다른점은 화면을 늘렸다 줄였다 했을 때 자유자재로 늘어났다 줄었다 한다... (1fr) */
+        .container {
+            display: grid;
+
+            grid-template-areas: /* 영역 <<틀>>만들기 */ 
+            'item1 item1 item1'  /* 첫번째 행에 item1이 3번 들어가도록 */
+            'item2 item2 item3'
+            'item4 item5 item5';
+
+            /* 1fr이 없어도 자유자재로 움직여짐! */
+            /* grid-template-rows: repeat(3, 1fr);  1fr의 100%를 다 쓰겠다는 의미
+            grid-template-columns: repeat(3, 1fr); */
+            height: 200px;
+
+            margin: 0px 50px;
+        }
+
+        .item {
+            text-align: center;
+            line-height: 200px;
+            color: #ccc;
+        }
+
+        .item1 {
+            grid-area: item1;  /* 영역 <<틀>>을 만들었으면 여기서 사용 한다.. */
+            background-color: pink;
+        }
+        .item2 {
+            grid-area: item2;  /* 영역 <<틀>>을 만들었으면 여기서 사용 한다.. */
+            background-color: green;
+        }
+        .item3 {
+            grid-area: item3;  /* 영역 <<틀>>을 만들었으면 여기서 사용 한다.. */
+            background-color: blue;
+        }
+        .item4 {
+            grid-area: item4;  /* 영역 <<틀>>을 만들었으면 여기서 사용 한다.. */
+            background-color: red;
+        }
+        .item5 {
+            grid-area: item5;  /* 영역 <<틀>>을 만들었으면 여기서 사용 한다.. */
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5.html</title>
+    <style>
+        /* 웹기준(pc모드 기준) */
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            width: 1000px; /* 모바일일 경우는 380? 정도로 */
+            margin: 0 auto;
+            font-size: 20px;
+        }
+        div {
+            background-color: antiquewhite;
+            border: 2px solid gray;  /* 선은 연습이기 때문에 넣음.. */
+            font-size: 25px;
+        }
+        div#area {
+            width: 960px;
+            height: 350px;
+            margin: 0 auto;
+            background-color: blueviolet;
+        }
+        #tbl {
+            width: 960px;
+            height: 450px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th,td {
+            border: 1px solid #bbb;
+            text-align: center;
+        }
+        div#img{
+            text-align: center;
+        }
+
+        div#img img {
+            width: 960px;
+        }
+
+        /* 미디어 쿼리 */
+        /* screen width >= 1024px (max-width < 1024px) , (max-width:1024px) */  /* 이런식으로 크기를 준다 */
+        @media screen and (max-width:1024px){   /* 1024px 밑에...  위에 적은 pc 기본은 1024px 이상 */
+            .container {
+                width: 700px; 
+                margin: 0 auto;
+                font-size: 15px;
+            }
+            div {
+                background-color: antiquewhite;
+                border: 2px solid gray;  /* 선은 연습이기 때문에 넣음.. */
+                font-size: 20px;
+            }
+            div#area {
+                width: 680px;
+                height: 200px;
+                margin: 0 auto;
+                background-color: pink;
+            }
+            #tbl {
+                width: 680px;
+                height: 250px;
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+            /* th,td {    th, td, div#img(이미지 가운데 정렬)은 바꿀게 없으므로 안적어도 된다.
+                border: 1px solid #bbb;
+                text-align: center;
+            }
+            div#img{
+                text-align: center;
+            } */
+
+            div#img img {
+                width: 680px;
+            }
+        }
+        @media screen and (max-width:768px){   /* max-width:768px이하.. *//* 1024px 밑에...  위에 적은 pc 기본은 1024px 이상 */
+            .container {
+                width: 460px; 
+                margin: 0 auto;
+                font-size: 12px;
+            }
+            div {
+                background-color: antiquewhite;
+                border: 2px solid gray;  /* 선은 연습이기 때문에 넣음.. */
+                font-size: 14px;
+            }
+            div#area {
+                width: 440px;
+                height: 100px;
+                margin: 0 auto;
+                background-color: pink;
+            }
+            #tbl {
+                width: 440px;
+                height: 150px;
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+            div#img img {
+                width: 440px;
+            }
+        }
+        @media screen and (max-width:400px){  
+            .container {
+                width: 300px; 
+                margin: 0 auto;
+                font-size: 10px;
+            }
+            div {
+                background-color: antiquewhite;
+                border: 2px solid gray;  /* 선은 연습이기 때문에 넣음.. */
+                font-size: 12px;
+            }
+            div#area {
+                width: 280px;
+                height: 60px;
+                margin: 0 auto;
+                background-color: pink;
+            }
+            #tbl {
+                width: 280px;
+                height: 90px;
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+            div#img img {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> <!-- div로 꼭 둘러싸 주어야 함.. -->
+        <h2>미디어 쿼리 연습</h2>
+        <p>(반응형 웹사이트 : Responsive Web Design)</p>
+        <hr/>
+        <!-- 텍스트 -->
+        <ul>
+            <li>데스크탑 : 1024px 이상</li>
+            <li>태블릿 : 768px~1024px</li>
+            <li>모바일 : 768px 이하</li>
+        </ul>
+        <hr/>
+        <div>이곳은 반응형 웹사이트를 위한 화면입니다.</div>
+        <hr/>
+        <!-- 레이어(박스) -->
+        <div id="area"></div>
+        <hr/>
+        <!-- 테이블 -->
+        <table id="tbl">
+            <tr>
+                <th>주제</th>
+                <th>강사</th>
+                <th>장소</th>
+            </tr>
+            <tr>
+                <td>웹표준에 대하여</td>
+                <td>홍길동</td>
+                <td>그린컴퓨터</td>
+            </tr>
+            <tr>
+                <td>자바 프로그램</td>
+                <td>허성진</td>
+                <td>그린 402호</td>
+            </tr>
+        </table>
+        <hr/>
+        <!-- 이미지 -->
+        <div id="img">
+            <img src="../../images/1.png" />
+        </div>
+    </div>
+</body>
+</html>

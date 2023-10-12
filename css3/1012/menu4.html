@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu1.html(풀다운 메뉴)</title>
+    <style>
+        /* css Reset(초기화) 설정 */
+        body{ 
+            margin: 0px;
+            padding: 0px;
+        }
+        ul, li {
+            list-style: none;
+            padding: 0px;
+        }
+        a {
+            /* text-decoration: none; */
+            text-decoration: inherit;
+            color: #fff;
+        }
+
+        /* 주메뉴 설정작업(실제로는 주메뉴,부메뉴 정확하게 나누는건 어려움!) */
+        nav {
+            text-align: center;
+        }
+        nav > ul {
+            background-color: aqua;
+            padding: 0px 10px;  /* 위아래는 가능한 여백을 주지 않는게 좋다고 함. */
+        }
+        nav > ul > li {
+            display: inline-block;  /* nav > ul인 부모에 적는 것보다 여기에 적는게 주메뉴 하나하나에 설정할 수 있어서 여기에 적는게 좋다. */
+            margin: 0px;
+            width: 110px;  /* 폭 지정 */
+        }
+        nav > ul > li > a {
+            display: inline-block;
+            /* background-color: #afafaf; */
+            padding: 10px;
+        }
+        nav > ul > li:hover > a {
+            background-color: black;
+            color: #fff;
+        }
+        nav > ul > li {
+            position: relative; /* 부모는 무조건 relative로 준다.. */
+        }
+        
+        /* 서브 메뉴 설정 */
+        nav ul li ul {  /* nav밑에 있는 두번째 ul.. */
+            display: none;
+            position: absolute;
+            width: 110px;
+            background-color: black;
+        }
+        nav ul li:hover ul {  /* nav밑에 있는 두번째 ul.. */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- nav는 목록태그(ul..등)으로 만드는게 좋다. -->
+    <nav> <!-- 시멘스틱 태그 -->
+        <ul>
+            <li><a href="#">주메뉴 1</a>
+                <ul>
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">주메뉴 2</a>
+                <ul>
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">주메뉴 3</a>
+                <ul>
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">주메뉴 4</a>
+                <ul>
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

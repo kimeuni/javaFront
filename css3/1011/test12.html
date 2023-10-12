@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test12.html</title>
+    <style>
+        .item {
+            width: 340px;
+            height: 150px;
+            border: 1px solid gray;
+        }
+        #item1 {
+            background-color: green;
+        }
+        #item2 {
+            /* background: linear-gradient(to bottom, #f00, #fff) 선형 그라데이션 */
+            /* background: linear-gradient(to top, #f00, #fff)  */
+            /* background: linear-gradient(to right, #f00, #fff)  */
+            /* background: linear-gradient(to left, #f00, #fff)  */
+            background: linear-gradient(to left, #f00, #ff0) /* 선형 그라데이션 */
+        }
+        #item3 {
+            background: linear-gradient(45deg, blue, pink); /* 45deg == 45도 각도로 */
+        }
+        #item4 {
+            background: linear-gradient(to right, #f00, #0f0 , #00f); /* 색은 지정한대로 다 나온다 */
+        }
+        #item5 {
+            background: radial-gradient(circle, #f00, #fff);  /* 원형 그라데이션 */ /* circle == 원의 중심에서부터 시작(기본값) (위치값, 색, 색....) */
+        }
+        #item6 {
+            background: radial-gradient(green 10%, #f00 30%, #fff 60%); /* 색의 비율을 조정할 수 있다. */  
+        }
+        #item7 {
+            background: radial-gradient(at left, #f00 30%, #fff 60%); 
+        }
+        #item8 {
+            background: radial-gradient(at right top, #f00, #fff);  /* at right top == 오른쪽 위해서부터 시작 */
+        }
+        table { /* 테이블의 크기는 table에.. (width, height) */
+            border-collapse: collapse;
+            width: 500px;
+            margin: 50px 0px;
+        }
+        td { /* 셀 안쪽을 넓힐려면 td에 (padding) */
+            padding: 20px;
+            text-align: center;
+            border: 1px solid gray;
+            /* background: linear-gradient(to bottom, red, #fff); */
+            /* background: linear-gradient(45deg, red, #fff); */
+        }
+        thead {
+            background: linear-gradient(to right, red, #fff);
+        }
+    </style>
+</head>
+<body>
+    <h2>그라데이션 효과</h2>
+    <div id="item1" class="item">연습</div>
+    <div id="item2" class="item">연습</div>
+    <div id="item3" class="item">연습</div>
+    <div id="item4" class="item">연습</div>
+    <div id="item5" class="item">연습</div>
+    <div id="item6" class="item">연습</div>
+    <div id="item7" class="item">연습</div>
+    <div id="item8" class="item">연습</div>
+    <hr/>
+    <table>
+        <thead>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+        </tbody>
+        <tr>
+        <tfoot>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

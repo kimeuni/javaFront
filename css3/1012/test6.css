@@ -1,0 +1,55 @@
+/* test6.css */
+body {
+    margin: 0px;
+    font-size: 0.8em;
+}
+.container {
+    background-color: bisque;
+    height: 100vh;  /* vh == 수직, 높이를 전부다 쓰겠다.. / 100%라고 적을 시, 사용한 부분의 100%여서 전체다 채워지진 않는다. */
+    display: flex;
+    /* flex-direction: row; 기본값(행기준)  */
+    /* flex-direction: column; 열기준  */
+    /* flex-direction: row-reverse;  */
+    /* flex-direction: column-reverse;  */
+    /* flex-wrap: wrap-reverse; */
+    /* flex-wrap: wrap */
+    flex-direction: row;
+    flex-wrap: wrap; /* 기본값 */
+    justify-content: flex-start;  /* 기본값 */
+
+    /* justify-content: flex-end;  flex-direction: row-reverse;와 비교해보기! (좀 다름!) */
+    /* justify-content: center;  가운데에 띄운다 */
+    
+    /* justify-content: space-around; 균등분할 맨처음과 끝은 반반씩.. */
+    /* justify-content: space-between; 처음과 끝을 제외하고 균등분할 */
+    justify-content: space-evenly; /* 처음과 끝 포함 균등분할 */
+    /* align-items: center; 화면에 가운데로 온다.. */
+
+    align-items: baseline;  /* 글자를 기준으로..  */
+    /* align-content: space-between; */
+    /* align-content: space-around; */
+    align-content: center;
+}
+.item {
+    width: 70px;
+    height: 70px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.item:nth-child(1){
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+}
+
+.item1 {background-color: #4287f5;}
+.item2 {background-color: #42e0f5;}
+.item3 {background-color: #473dff;}
+.item4 {background-color: #a5e861;}
+.item5 {background-color: #fff09e;}
+.item6 {background-color: #ffd6bd;}
+.item7 {background-color: #ffbdec;}
+.item8 {background-color: #d69487;}
+.item9 {background-color: #d8a8f0;}
+.item10 {background-color: #a6cc95;}
