@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework1.html</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            width: 450px;
+        }
+        .titlec {
+            color: blue;
+            font-weight: bolder;
+        }
+        .pilsu{
+            color: red;
+        }
+        .join {
+            width: 450px;
+            
+        }
+        form div {
+            padding: 10px;
+        }
+        .aa {
+            float: right;
+        }
+        .box {
+            border: 1px solid;
+            margin: 10px 0px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <from name="login" id="login" class="login">
+            <fieldset>
+                <legend class="titlec">로그인</legend>
+                <span><label for="uid">아아디</label></span>
+                <span><input type="text" name="uid" id="uid" autofocus required size="10" ></span>
+                <span><label for="pwd">비밀번호</label></span>
+                <span><input type="password" name="pwd" id="pwd" required size="10"></span> &nbsp;
+                <span><input type="submit" value="로그인"></span>
+            </fieldset>
+        </from>
+    </div>
+    <hr/>
+    <form class="join">
+        <fieldset>
+            <legend class="titlec">회원가입</legend>
+            <div>
+                <label for="jid">아이디<span class="pilsu">*</span></label>
+                <span><input type="text" name="jid" id="jid" required placeholder="아이디를 입력하세요." class="aa"/></span>
+            </div>
+            <div>
+                <label for="jpwd">비밀번호<span class="pilsu">*</span></label>
+                <span><input type="password" name="jpwd" id="jpwd" required placeholder="비밀번호를 입력하세요." class="aa"/></span>
+            </div>
+            <div>
+                <label for="jpwdc">비밀번호 확인<span class="pilsu">*</span></label>
+                <span><input type="password" name="jpwdc" id="jpwdc" required placeholder="비밀번호를 다시 입력하세요." class="aa"/></span>
+            </div>
+            <div>
+                <label for="name">이름<span class="pilsu">*</span></label>
+                <span><input type="text" name="name" id="name" required placeholder="이름을 입력하세요." class="aa"/></span>
+            </div>
+            <div>
+                <label for="jemail">메일 주소<span class="pilsu">*</span></label>
+                <span><input type="email" name="jemail" id="jemail" required placeholder="메일주소를 입력하세요." class="aa"/></span>
+            </div>
+            <div>
+                <label for="jnumber">전화번호</label>
+                <span><input type="text" name="jnumber" id="jnumber" required placeholder="메일주소를 입력하세요." class="aa"/></span>
+            </div>
+        </fieldset>
+        <div class="box"> 
+            <span><input type="submit" value="가입하기"></span>
+            <span><input type="reset" value="다시쓰기"></span>
+        </div>
+    </form>
+</body>
+</html>
