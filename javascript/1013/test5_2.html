@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test5_2.html</title>
+    <script>
+        // 호이스팅(hoisting)
+
+        'use strict'; // 변수 선언 안하면 무조건 사용 못함 (자바를 따라가려고 함.. / 자바는 변수를 선언 안하면 못사용하기 때문)
+
+        let sbs;  //  let : 일반 변수 선언(사용하기 전에 선언을 해야 함) /무조건 선언을 해야만 사용가능하도록 한게 let(엘리트) 이다..  (변수를 위에 선언해놔야 개발자 입장에서 어디에 무엇을 사용했는지 구분을 하기 편하기 때문에 선언을 하는 명령어를 만들었다,)
+        const kbs=100; // const : 값을 넣으면 못바꾸게 함 (열거형과 비슷함/ 사용하기 전에 선언을 해야 함)
+        // kbs = 200;  // const는 값을 한 번 넣으면 값을 바꿀 수 없기 때문에 kbs의 값을 바꾸려고하면 <<에러>>가 뜬다.
+        cjb= 200; 
+        
+        console.log("sbs = " + sbs);  
+        console.log("kbs = " + kbs);  
+        console.log("cjb = " + cjb);  
+        console.log("seoul = " + seoul);  
+        
+        var seoul; // 'use strict'; 이 없으면 <<호이스팅>>이 되기 때문에 사용 전이든 후든 아무곳인 사용 가능... <<var>>는 가급적 사용 금지
+        
+        function calc(){
+            sbs = mbc + 50;
+            console.log("sbs = " + sbs);
+        }
+        
+        var mbc = 100;
+    </script>
+</head>
+<body>
+    <h2>변수의 선언</h2>
+    <input type="button" value="계산" onclick="calc()" />
+</body>
+</html>

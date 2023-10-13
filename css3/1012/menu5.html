@@ -2,67 +2,49 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>menu5.html</title>
+  <title>menu5.html(메뉴 정리)</title>
   <style>
-    /* css reset 설정 */
-    body, ul, li {
+    /* CSS Reset */
+    body , ul, li{
       margin: 0px;
       padding: 0px;
       list-style: none;
     }
-    /* 앵커태그 초기 설정 */
     a {
-      /* text-decoration: none; */
       text-decoration: inherit;
       color: white;
     }
 
-    /* 주메뉴 설정작업 */
+    /* 주메뉴 */
     nav {
       text-align: center;
     }
-
     nav ul {
-      background-color: #000;
+      background-color: black;
+      /* display: inline-block; */
     }
-
-    nav > ul {
+    nav ul li {  /* 자손 선택자 이기 때문에 주메뉴, 부메뉴가 모두 영향을 받는다. */
       display: inline-block;
-      border-radius: 5px;
-      /* padding: 0px 10px; */
-    }
-    nav > ul > li {
-      display: inline-block;
+      position: relative; /* ★★★★ */
       width: 110px;
-      /* margin: 0px; */
-    }
-    /* nav > ul > li > a { */
-    nav li > a {
-      display: block;
       padding: 10px;
     }
-    /* nav > ul > li:hover > a { */
-    nav li:hover > a {
-      background-color: rgb(67, 168, 251);
-      color: #fff;
-      border-radius: 5px;
+    nav ul li:hover {
+      background-color: gray;
     }
-    nav li {
-      position: relative;
-    }
-
-    /* 서브 메뉴 설정 */
-    nav ul li ul {
+    
+    /* 부메뉴 */
+    nav ul li ul {  /* 그냥 부메뉴 모양 */
       display: none;
-      position: absolute;
-      width: 110px;
-      border-radius: 5px;
+      position: absolute;  /* ★★★★ */
+      top: 40px;  /* padding 10px 으로 늘어난 크기로 인해 "서부메뉴(부메뉴)"의 화면이 맞지 않아 높이 조절을 한다. */
+      left: 0;  /* 위에 relative(주메뉴에 설정한 포지션) 시작이 0px이기 때문에 0px위치에 놓으면 딱 맞는다. */
     }
-    nav li:hover > ul {
-      display: block;
+    nav ul li:hover ul { /* 상위 항목은 "주메뉴(li:hover)"에 마우스를 놓았을 때의 부메뉴 모양 설정 /"주메뉴"에 마우스를 가져다 놓으면 부메뉴가 나온다.. */
+      display: block;  /* 아래 있는 "서브메뉴(부메뉴)"는 block형식으로 해야 한다.. (inline-block) */
     }
+    
   </style>
 </head>
 <body>
@@ -70,34 +52,34 @@
     <ul>
       <li><a href="#">주메뉴 1</a>
         <ul>
-          <li><a href="#">서브메뉴 1</a></li>
-          <li><a href="#">서브메뉴 2</a></li>
-          <li><a href="#">서브메뉴 3</a></li>
-          <li><a href="#">서브메뉴 4</a></li>
+          <li><a href="#">서브메뉴 1</li>
+          <li><a href="#">서브메뉴 2</li>
+          <li><a href="#">서브메뉴 3</li>
+          <li><a href="#">서브메뉴 4</li>
         </ul>
       </li>
       <li><a href="#">주메뉴 2</a>
         <ul>
-          <li><a href="#">서브메뉴 1</a></li>
-          <li><a href="#">서브메뉴 2</a></li>
-          <li><a href="#">서브메뉴 3</a></li>
-          <li><a href="#">서브메뉴 4</a></li>
+          <li><a href="#">서브메뉴 1</li>
+          <li><a href="#">서브메뉴 2</li>
+          <li><a href="#">서브메뉴 3</li>
+          <li><a href="#">서브메뉴 4</li>
         </ul>
       </li>
       <li><a href="#">주메뉴 3</a>
         <ul>
-          <li><a href="#">서브메뉴 1</a></li>
-          <li><a href="#">서브메뉴 2</a></li>
-          <li><a href="#">서브메뉴 3</a></li>
-          <li><a href="#">서브메뉴 4</a></li>
+          <li><a href="#">서브메뉴 1</li>
+          <li><a href="#">서브메뉴 2</li>
+          <li><a href="#">서브메뉴 3</li>
+          <li><a href="#">서브메뉴 4</li>
         </ul>
       </li>
       <li><a href="#">주메뉴 4</a>
         <ul>
-          <li><a href="#">서브메뉴 1</a></li>
-          <li><a href="#">서브메뉴 2</a></li>
-          <li><a href="#">서브메뉴 3</a></li>
-          <li><a href="#">서브메뉴 4</a></li>
+          <li><a href="#">서브메뉴 1</li>
+          <li><a href="#">서브메뉴 2</li>
+          <li><a href="#">서브메뉴 3</li>
+          <li><a href="#">서브메뉴 4</li>
         </ul>
       </li>
     </ul>

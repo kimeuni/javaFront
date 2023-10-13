@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script>
+        // 더하기 처리
+        function add() {
+            su1 = document.getElementById("su1").value;  // 프론트는 다 이런식으로 쓴다..
+            su2 = document.getElementById("su2").value;  // 이렇게 하면 id로 찾아오기 때문에 name="su1 or su2로 적은 변수"를 지워도 에러가 나지 않는다. // **** 근데 바뀌었는지 name을 지우든 안지우든 에러가 나지 않는다... (but 백엔드에서는 name에 적혀있는 변수명으로 값을 넘기기 때문에! 꼭 name 변수명이 선언되어 있는지 확인해야 된다.)
+            hap = parseInt(su1) + parseInt(su2); 
+            alert("두수의 합 : "+ hap)
+        }
+        // 빼기 처리
+        function sub() {
+            su1 = document.myform.su1.value;  // document에 있는 myform(form)에 있는 su1을 찾아서 그 값(value)를 가져온다...
+            su2 = document.myform.su2.value;  // 원래는 name 변수로 찾는데.. 바뀌었는지 id로도 찾아진다...
+            hap = su1 - su2; 
+            alert("두수의 차 : "+ hap)
+        }
+        
+        // 곱하기 처리
+        function mul() {
+            su1 = document.myform.su1.value;  
+            su2 = document.myform.su2.value;
+            gop = su1 * su2;  
+            alert("두수의 곱" + gop);
+        }
+
+        // 나누기 처리
+        function div() {
+            su1 = document.myform.su1.value;  
+            su2 = document.myform.su2.value;
+            gop = su1 / su2;  
+            alert("두수의 몫" + gop);
+        }
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <h2>form태그와 자바스크립트</h2>
+    <form name="myform">
+        <p>
+            <div class="form-group mt-5">
+                <label for="su1">첫번째 수 :</label>
+                <input type="number"  id="su1" value="0" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="su2">두번째 수 :</label>
+                <input type="number"  id="su2" value="0"  class="form-control"/>
+            </div>
+            <div>
+                <input type="button" value="더하기" onclick="add()" class="btn btn-success form-control mb-1"/> 
+                <input type="button" value="빼기" onclick="sub()" class="btn btn-primary form-control mb-1"/> 
+                <input type="button" value="곱하기" onclick="mul()" class="btn btn-secondary form-control mb-1" />
+                <input type="button" value="나무기" onclick="div()" class="btn btn-info form-control mb-1"/>
+            </div>
+        </p>
+    </form>
+</div>
+</body>
+</html>

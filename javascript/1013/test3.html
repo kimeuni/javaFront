@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test3.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="test.js"></script>  <!-- 자주 사용할 javascript를 링크걸어서 사용한다..(확인체크 버튼 부분의 내용이 들어가있다.) -->
+    <script>
+        function msg1() {
+            alert("안녕!!!");
+        }
+        function msg2() {
+            name = prompt("성명을 입력하세요.");  /* 메세지와 같이, 입력을 받을 때 사용한다. */
+            /* 변수로 받아준다.. */
+            /* Java 였으면 String name = prompt.... 이런식으로 String이라는 <<타입>>을 줬을텐데 자바 스크립트에서는 타입을 사용하지 않아도 괜찮기 때문에 받을 <<변수명>>만 적는다. */
+            alert("입력된 성명은?" + name);
+        }
+        function ageCheck() {
+            age = prompt("나이를 입력하세요?");
+            if(age < 20) {
+                alert("미성년자 시군용~~");
+            }
+            else if(age > 150) {
+                alert("제대로된 나이로 적어주세요^^~");
+            }
+            else {
+                // age = age + 1;  // 문자로 보기 때문에 age+1 (ex age== 20)는 201로 나온다. 
+                age = parseInt(age) + 1;  //숫자로 변환해주어야 한다..   parseInt : 수로 변환
+                alert("통과 입니다("+ age +")");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <h2>메세지 출력연습</h2>
+    <form>
+        <input type="button" value="메세지1" onclick="msg1()" class="btn btn-success"/>
+        <button type="button" onclick="msg2()" class="btn btn-primary">메세지2</button>
+        <button type="button" onclick="ageCheck()" class="btn btn-warning">나이체크</button>
+        <button type="button" onclick="ynCheck()" class="btn btn-secondary">확인체크</button>
+    </form>
+</div>
+</body>
+</html>
