@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ex2.html</title>
-    <!-- 
+<!-- 
         회원가입폼에서
         회원아이디는 알파벳 영문자 대/소문자와 숫자와 '_'만 사용가능한 4자리 이상 12자리 이하로 처리,
         비밀번호는 알파벳 영문자 대/소문자와 숫자 3자리이상과 키보드상의 특수문자 1자리 이상 더한문자가 4자리 이상 12자리 이하로 처리
@@ -14,8 +8,85 @@
         앞의 값들을 모두 처리한 후 아이디 demo에 출력시켜 주시오. (단 가입포인트는 천단위마다 쉼표처리해서 출력할 것)
         (length가 3글자 넘어갈때마다 , ....)
     -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        
+        function check(){
+            let id = document.getElementById("id").value.trim();
+            let pw = document.getElementById("pw").value.trim();
+            if(id == "" || pw== "") {
+                alert("아이디, 비밀번호, 전화번호, 포인트는 필수 입력입니다.")
+                document.getElementById("id").focus();
+                return;
+            }
+            // 아이디 길이
+            else if(id.length < 4 || id.length > 12) {
+                alert("아이디는 4자리 이상, 12자리 이하로 적어주세요.")
+                document.getElementById("id").focus();
+                return;
+            }
+            // 비밀번호 길이
+            else if(pw.length < 4 || pw.length > 12) {
+                alert("비밀번호는 4자리 이상, 12자리 이하로 적어주세요.")
+                document.getElementById("id").focus();
+                return;
+            }
+        }
+        
+    </script>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #field {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .box {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    
+<p><br/></p>
+<div class="container" >
+    <h2 style="text-align: center;">회원가입폼 만들기(20231016)</h2>
+    <p><br/></p>
+    <form name="myform" >
+        <fieldset id="field">
+            <legend>회 원 가 입</legend>
+            <div class="m-3 row">
+                <span >아이디 : </span>
+                <span class="col"><input type="text" name="id" id="id" autofocus placeholder="아이디를 입력하세요."></span>
+                <span >비밀번호 : </span>
+                <span class="col"><input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요."></span>
+            </div>
+            <div class="m-3">
+                <span>전화번호 : </span>
+                <span class="col"><input type="text" style="width: 150px;" maxlength="3"/> - <input type="text" style="width: 150px;"maxlength="4"/> - <input type="text" style="width: 150px;" maxlength="4"/></span>
+            </div>
+            <div class="m-3">
+                <span class="col">포인트 : </span>
+                <span class="col"><input type="number" name="point" id="point" placeholder="포인트를 입력하세요."></span>
+            </div>
+        </fieldset>
+        <div class="row m-3 box">
+            <input type="button" value="가입하기" onclick="check()" class="col btn btn-success form-control"/>
+            <input type="reset" value="다시입력" class="col btn btn-primary form-control" />
+        </div>
+    </form>
+</div>
 </body>
 </html>
