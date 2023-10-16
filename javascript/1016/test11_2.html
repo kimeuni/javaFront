@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test11.html</title>
+    <script>
+        'use strict';
+
+        //프론트에서 체크 방법 (id를 사용한다...)
+        function fCheck() {
+            let gender;
+
+            if(document.getElementById("gender1").checked ) gender = "남자";  // 텍스트필드는 value로 비교하지만 <<radio>>버튼은 <<checked>>로 비교해서 한다..
+            if(document.getElementById("gender2").checked ) gender = "여자";  // 텍스트필드는 value로 비교하지만 <<radio>>버튼은 <<checked>>로 비교해서 한다..
+            // else를 사용해도 되지만, 프론트에서 보통(?) 실무에서(?) 이런식으로 그냥 복사해서 한다고 함
+
+            demo.innerHTML = "<font color='orange'><b>"+gender+"</b></font>";
+        }
+    </script>
+</head>
+<body>
+    <h2>라디오 버튼값 체크</h2>
+    <form name="myform">
+        <div>
+            <input type="radio" name="gender" id="gender1" value="남"/>남자
+            <input type="radio" name="gender" id="gender2" value="여" checked/>여자
+            <input type="button" value="성별체크" onclick="fCheck()"/>
+        </div>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test7_2.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        'use strict'
+        function adrressCheck() {
+            let address = document.getElementById("address").value;
+
+            // 제대로 작동되는지 확인
+            // console.log("address.indexOf('https://') : ",address.indexOf("https://"));
+            // console.log("address.includes('https://') : ",address.includes("https://")); 
+            // console.log("address.length : ",address.length);
+
+            if(address.includes("https://") && address.length == 8 ){
+                alert("주소를 입력하세요.")
+                document.getElementById("address").focus();
+            }
+            else {
+                // location.replace(address);
+                location.href = address; // href=> 적어주는 주소로 간다..
+            }
+        }
+
+        // Enter키 여부 체크
+        function enterCheck() {
+            let keyCode = window.event.keyCode;
+            
+            // Enter가 번호 13이다..
+            // 엔터를 누르면 adrressCheck() 함수의 내용을 실행한다
+            if(keyCode == 13) adrressCheck();
+
+            // console.log(keyCode);
+        }
+
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <h2>이동할 주소를 입력후 이동버튼을 클릭하세요</h2>
+    <div>
+        <label for="address">이동할 주소 : </label>
+        <input type="url" name="address" onkeydown="enterCheck()" id="address" value="https://" placeholder="이동할 주소를 입력해주세요." class="form-control mt-2 mb-2" autofocus/>
+        <input type="button" value="이동"  onclick="adrressCheck()" class="btn btn-success form-control" />
+    </div>
+</div>
+</body>
+</html>
