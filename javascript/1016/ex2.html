@@ -24,6 +24,8 @@
         function check(){
             let id = document.getElementById("id").value.trim();
             let pw = document.getElementById("pw").value.trim();
+            let passwordRule1 = ["!","@","#","$","%","^","&","*","(",")","_","+","-","="];
+
             if(id == "" || pw== "") {
                 alert("아이디, 비밀번호, 전화번호, 포인트는 필수 입력입니다.")
                 document.getElementById("id").focus();
@@ -41,8 +43,33 @@
                 document.getElementById("id").focus();
                 return;
             }
+            // 비밀번호 특수문자 체크
+            let idCheck ="";
+            for(let i=0; i<pw.length; i++) {
+                for(let j=0; j<passwordRule1.length; j++){
+                    // 만약 passwordRule1에 적은게 pw에 있다면.... 실행을 멈춰라..
+                    if(pw.charAt(i) == passwordRule1[j]) {
+                        console.log(pw.charAt(i));
+                        console.log(passwordRule1[j]);
+                        // idCheck = true;
+                        // console.log("ㅇㅇ:",idCheck);
+                        return; // 그냥 리턴을 하면 idCheck의 값을 넘겨받을 수 없기 때문에 idCheck = true; 를 안써줘도 된다..
+                    }
+                    else {
+                        // 만약 passwordRule1에 적은게 pw에 없다면 idCheck =false; ==>idCheck를 false로 해라..
+                        idCheck =false;
+                    }
+                }
+                // console.log(idCheck);
+            }
+            // console.log("밖",idCheck);
+            if(idCheck == false) {
+                alert("비밀번호는 특수문자 1개 이상 넣으셔야 합니다.")
+            }
+            
         }
-        
+        // 비교하는 거 힌트.. ==> 배열로 만들고 let password = [!,@,#,$,%,^,&,*,(,),_,+] 이런식으로 배열 만들고 charAt()으로 하나하나 비교해서 하기
+        // == > 배열로 안만들고 해도 괜찮을 것 같ㅌ음!!! let password = "!@#@$*%)(^*)%)()" 이렇게 적고 charAt으로 빼기...
     </script>
     <style>
         body{
