@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2_객체.html</title>
+    <script>
+        'use scrict'
+
+        //객체 생성 : new 연산자
+        let obj = new Object; // 자바스크립트도 최상위 클래스는 <<Object>>이다.
+        obj.name = '홍길동';  // 이렇게 만들면 obj에 name='홍길동' 이라는 필드가 자동으로 생성된다. / 자바의 경우 그 클래스에 가서 필드,메소드,생성자를 만들어줘야 사용이 가능...
+        obj.age = 25;        
+        obj.jumsu = [100,90,80];
+        obj.func = function() { 
+            console.log("성명 : ", this.name);
+        } // function은 익명객체를 만들어서 사용해야한다.   // 자기가 가지고 있는건... 자바와 같이 this. 을 사용
+
+        obj.myObj = {
+            tel : '010-1234-5678',
+            address : '청주시 홍덕구 사창동'
+        };   //객체  //객체는 : 을 사용  (객체 안에서의 function은 익명객체로만 만들 수 있음)
+
+        console.log("obj 객체 : " , obj);
+    </script>
+</head>
+<body>
+    <h2>객체(클래스) 연습</h2>
+</body>
+</html>

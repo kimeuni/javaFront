@@ -68,17 +68,25 @@ console.log("res2 리버스 : " , res2.reverse());
 
 
 const arr3 = [10,8,20,15,11,17];
-console.log("arr3 : ",arr3);
+console.log("arr3(원본) : ",arr3);
 
 
 // 오름차순 정렬 : sort() : 무조건 문자형식으로 정렬...
 // 원본데이터 순서가 정렬된 걸로 바뀐다.
 let res3 = arr3.sort();
-console.log("res3 : ",res3);
+console.log("res3(문자형식) : ",res3);
 
-// 내림차순 정렬 : reverse() : 무조건 문자형식으로 거꾸로 정렬...
+// 오름차순정렬 : sort(a,b)=>a-b) ==> 숫자형식으로 정렬...
+res3 = arr3.sort((a,b) => a-b);  // 예:  a가 3, b가 5면, a-b는 음수이기에 a가 b보다 작은값이다. 즉, 작은값이 앞에 있게 정렬된다 : 오름차순정렬
+console.log("res3(숫자형식오름차순) : ",res3);
+
+// 내림차순정렬 : sort(a,b)=>b-a) ==> 숫자형식으로 정렬...
+res3 = arr3.sort((a,b) => b-a); // 예:  a가 3, b가 5면, 앞의 조건과 반대로 b-a가 양수이기에 b가 큰값이다. 따라서 큰값에서 작은값으로 정렬된다
+console.log("res3(숫자형식내림차순) : ",res3);
+
+// 역순으로 출력 : reverse() : 무조건 문자형식으로 거꾸로(역순) 출력...
 let res4 = arr3.reverse();
-console.log("res4 : ", res4);
+console.log("res4(역순) : ", res4);
 
 console.log("arr3 : ",arr3);
 arr3.forEach((data,idx) => console.log(data," : ",idx));

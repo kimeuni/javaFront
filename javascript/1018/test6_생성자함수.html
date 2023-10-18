@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6_생성자함수.html</title>
+    <script>
+        'use strict'
+        
+        // 생성자 함수  (클래스와 다름.. 클래스 = 설계도  / 객체는 설계도 없이 만들수 있음.)
+        const user1 = {name: '홍길동',age : 22} //생성자 함수   //포통은 필드명만 넣어서 사용 (name(키/필드)/'홍길동'(값))
+        const user2 = {name: '김말숙',age : 35}
+        const user3 = {name: '이기자',age : 19}
+
+        function fCheck1() {
+            console.log("user1 : ",user1);
+            console.log("user1.name : ", user1.name);
+        }
+        function fCheck2(user) {
+            console.log("user : ", user);
+        }
+
+        // 함수 안에서 객체를 만든다? 
+        const user4 = new user("강감찬",55);  //객체 생성
+
+        function user(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+    </script>
+</head>
+<body>
+    <h2>생성자 함수 연습</h2>
+    <input type="button" value="실행1" onclick="fCheck1()"/>
+    <input type="button" value="실행2" onclick="fCheck2(user1)"/> <!-- 함수 안에 객체명(user1)을 불러서 사용-->
+    <input type="button" value="실행3" onclick="fCheck2(user2)"/>
+    <input type="button" value="실행4" onclick="fCheck2(user3)"/>
+    <input type="button" value="실행5" onclick="fCheck2(user4)"/>
+</body>
+</html>

@@ -98,14 +98,17 @@
         }
         
         //초기화
-        function clear() {
+        function clearA() {
+            console.log("A ");
             demo1.innerHTML = "";
             demo2.innerHTML = "";
             // document.getElementById("demo2").innerHTML = "";
         }
 
+
         //계산
         function calc(){
+            console.log("B ");
             let demo1 = document.getElementById("demo1").innerHTML;
             demo2.innerHTML = eval(demo1);
         }
@@ -120,12 +123,12 @@
         <div id="demo1" class="form-control mt-5" style=" height: 55px; margin: 0 auto; border: 1px solid; text-align: right; font-size: 14pt;"></div>
         <div id="demo2" class="form-control mt-4" style=" height: 60px; margin: 0 auto; border: 1px solid; text-align: right; font-size: 18pt; font-weight: bolder;"></div>
         <!-- <div class="mt-5" ><input type="text" readonly name="demo1" id="demo1" class="form-control" style="text-align: right;"></div>
-        <div class="mt-4" ><input type="text" readonly name="demo2" id="demo2" class="form-control" style="text-align: right;"></div> -->
+        <div class="mt-4" ><input type="text" disabled="true" readonly name="demo2" id="demo2" class="form-control" style="text-align: right;"></div> -->  <!-- disabled="true" 클릭도 안되게 함. -->
         <hr/>
         <div class="row mt-5 mb-4">
             <div class="col"><input type="button" onclick="op1()" value="%" class="btn btn-success form-control sizeH"/></div>
             <div class="col"><input type="button" onclick="op2()" value="/" class="btn btn-success form-control sizeH"/></div>
-            <div class="col"><input type="button" onclick="clear()" value="c" class="btn btn-success form-control sizeH"/></div>
+            <div class="col"><input type="button" onclick="clearA()" value="c" class="btn btn-success form-control sizeH"/></div>
             <div class="col"><input type="button" onclick="backClear()" value="Backspace" class="btn btn-success form-control sizeH"/></div>
         </div>
         <div class="row mb-4">
