@@ -28,14 +28,17 @@
         function fCheck() {
             //정규식 정의
             let regMid = /^[a-zA-Z0-9_]{4,20}$/;
-            let regPwd = /^[a-zA-Z0-9_]{4,20}$/;
-            let regNickName = /^[가-힣]+$/;   // /^[가-힣]*$/; *로하면 공백처리를 못함.. 왜..? 인지는 모르겠음 
+            let regPwd = /^(?=.*[a-zA-Z0-9])(?=.*[~!@#$%^&*()_+[\]{}?]).{4,20}$/;
+            let regNickName = /^[가-힣]+$/;   // /^[가-힣]*$/; *로하면 0개 이상을 가리키기 때문에 안 됨
             let regName = /^[가-힣a-zA-Z]+$/;
             // let regEmail = /^[\w]{3,15}@+[a-zA-Z]+\.+[a-z]+$/;   // ==> 이렇게 적을 시 문제점 : @와 . 이 1개 이상 들어갈 수 있게 만들어서 aaa12@@@naver...com이런식으로 만들어도 유효성이 통과된다. 
-            let regEmail = /^[\w]{3,15}[@]{1}[a-zA-Z]+[\.]{1}[a-z]+$/;  
+            let regEmail = /^[\w]{3,15}@[a-zA-Z]+\.[a-z]+$/;   
             //[a-zA-Z]{3,10}\.+ 가운데 부분에 사이즈(ex{3,10}) 를 줘야만 유효성 검사가 제대로 이루어짐 왜..? 인지는 모르겠음
             // ++ 아님!! 가운데 길이{3,10} 안줘도 됨! 대신 + 를 넣어줘서 1개 이상 [a-zA-Z]가 들어가도록 해야함!
-            let regHomePage = /[]/;
+            // ++ let regEmail = /^[\w]{3,15}[@]{1}[a-zA-Z]+[\.]{1}[a-z]+$/;   ==> 이렇게 [@]{1}을 1개라고 정의하지 않고 @로만 적어도 됨.
+            let regHomePage = /^(https?:\/\/)+(www\.)?[\w]+\.[a-zA-Z]+\.[a-zA-Z]+$/;
+            let regTel = /^[0-9]{2,3}[-]{1}[0-9]{3,4}[-]{1}[0-9]{4}$/;
+            let regJumin = /^[0-9]{6}-[1-4]{1}$/;
 
             // form에 입력된 값들을 변수에 담기
             let mid = document.getElementById("mid").value.trim();
@@ -44,6 +47,8 @@
             let name = document.getElementById("name").value.trim();
             let email = document.getElementById("email").value.trim();
             let homePage = document.getElementById("homePage").value.trim();
+            let tel = document.getElementById("tel").value.trim();
+            let jumin = document.getElementById("jumin").value.trim();
 
             // 유효성 검사
             if(!regMid.test(mid)){
@@ -51,9 +56,11 @@
                 document.getElementById("mid").focus();
                 return false;
             }
-            // else if(!regPwd.test(pwd)) {
-
-            // }
+            else if(!regPwd.test(pwd)) {
+                alert("비밀번호는 영문 대/소문자와 숫자,을 포함아여 4~20글자까지 가능합니다.");
+                document.getElementById("pwd").focus();
+                return false;
+            }
             else if(!regNickName.test(nickName)){
                 alert("닉네임은 한글로만 입력 가능합니다.");
                 document.getElementById("nickName").focus();
@@ -69,6 +76,22 @@
                 document.getElementById("email").focus();
                 return false;
             }
+            else if(!regHomePage.test(homePage)){
+                alert("홈페이지 주소 형식에 맞게 입력해주세요.");
+                document.getElementById("homePage").focus();
+                return false;
+            }
+            else if(!regTel.test(tel)){
+                alert("전화번호 형식으로만 입력 가능합니다. (형식 : 2~3글자-3~4글자-4글자)");
+                document.getElementById("tel").focus();
+                return false;
+            }
+            else if(!regJumin.test(jumin)){
+                alert("주민번호 형식에 맞게만 입력 가능합니다. (숫자 6자리 - 숫자 1자리)");
+                document.getElementById("jumin").focus();
+                return false;
+            }
+            
 
             alert("유효성 검사 통과 완료~~")
         }
@@ -97,7 +120,7 @@
         </div>
         <div class="form-grup">
             <label for="pwd">비밀번호</label>
-            <input type="password" name="pwd" id="pwd" value="1234" placeholder="비밀번호를 입력하세요." required class="form-control"/>
+            <input type="password" name="pwd" id="pwd" value="aA1234@" placeholder="비밀번호를 입력하세요." required class="form-control"/>
         </div>
         <div class="form-grup">
             <label for="nickName">닉네임</label>
