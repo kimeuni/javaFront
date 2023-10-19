@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test7_전체선택.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        'use strict';
+        
+        // 체크박스 상태
+        function foodCheck(e) { //e 변수로 받아서
+            if(e.checked) demo.innerHTML = "<font color='red'<b>"+e.value+"</b></font> 선택" // e.checked : 체크가 됐는지 확인
+            else demo.innerHTML = "<font color='blue'<b>"+e.value+"</b></font> 선택 취소"
+        }
+
+        // 전체 선택
+        // function allCheck() {
+        //     for(let i=0; i<myform.food.length; i++) {
+        //         myform.food[i].checked = true;
+        //     }
+        // }
+
+        //전체 선택 방법 2
+        function allCheck() {
+            for(let i=0; i<myform.food.length; i++) { // length는 name으로만(?) 찾을 수 있다.
+                document.getElementsByName("food")[i].checked = true;  //  myform.food[i].checked = true; : 가 아닌  getElementsByName로도 사용이 가능하다.
+            }
+        }
+
+        // 전체 해제
+        function allReset() {
+            for(let i=0; i<myform.food.length; i++) {
+                myform.food[i].checked = false;
+            }
+        }
+
+        // 선택 반전
+        function reversCheck() {
+            for(let i=0; i<myform.food.length; i++) {
+                if(myform.food[i].checked){  // myform.food[i] : checkbox는 배열로 넘어오기 때문에 myform에 있는 food의 [] 배열에 checked 체크된게 참인가? (기본이 논리값 true로 넘어가기 때문에 myform.food[i].checked == true 로 적지 않아도 된다.)
+                    myform.food[i].checked = false;
+                }
+                else {
+                    myform.food[i].checked = true;
+                }
+            }
+        }
+        
+        // 선택 반전2
+        function reversCheck2() {
+            for(let i=0; i<myform.food.length; i++) {
+                myform.food[i].checked = !myform.food[i].checked // 나의 부정..   ★★★★ (많이 나온다고 함 이런 방법이 있다는 거 기억하기)
+            }
+        }
+        
+        // 선택된 값 누적 출력
+        function outCheck() {
+            let str = '';
+
+            for(let i=0; i<myform.food.length; i++) {
+                if(myform.food[i].checked){
+                    str += myform.food[i].value+"<br/>";
+                }
+            }
+            demo.innerHTML = "<font color='blue'<b>"+str+"</b></font>"
+        }
+
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <h2>좋아하는 음식은?</h2>
+    <form name="myform">
+        <p>
+            <input type="checkbox" name="food" value="탕수육" onclick="foodCheck(this)" class="ml-2"/> 탕수육 
+            <input type="checkbox" name="food" value="짜장면" onclick="foodCheck(this)" class="ml-2"/> 짜장면
+            <input type="checkbox" name="food" value="제육덮밥" onclick="foodCheck(this)" class="ml-2"/> 제육덮밥
+            <input type="checkbox" name="food" value="돈까스" onclick="foodCheck(this)" class="ml-2"/> 돈까스
+            <input type="checkbox" name="food" value="유부우동" onclick="foodCheck(this)" class="ml-2"/> 유부우동
+            <input type="checkbox" name="food" value="참치김밥" onclick="foodCheck(this)" class="ml-2"/> 참치김밥
+        </p>  <!-- foodCheck(this) : this는 현재 상황을 넘김 -->
+        <hr/>
+        <p>
+            <input type="button" value="전체선택" onclick="allCheck()" class="btn-sm btn-info"/>
+            <input type="button" value="전체취소" onclick="allReset()" class="btn-sm btn-primary"/>
+            <input type="button" value="선택반전" onclick="reversCheck()" class="btn-sm btn-info"/>
+            <input type="button" value="선택반전2" onclick="reversCheck2()" class="btn-sm btn-primary"/>
+            <input type="button" value="선택값출력" onclick="outCheck()" class="btn-sm btn-info"/>
+        </p>
+        <hr/>
+        <div id="demo"></div>
+    </form>
+</div>
+</body>
+</html>
