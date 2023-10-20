@@ -14,6 +14,7 @@
         'use strict';
         
         let stClock;
+        let num = 0;
 
         function clock() {
             let todayTime = new Date();
@@ -80,12 +81,29 @@
         
         function staratC() {
             clock();
+            time()
             stClock = setTimeout(staratC,1000);
+            
         }
         function endC() {
             clearTimeout(stClock);
         }
 
+        function time() {
+            let str = "";
+            num++
+            // timer.innerHTML = num;
+            for(let i=0; i<num.toString().length; i++){
+                console.log(num.toString().charAt(i));
+                str += `<img src="../../images/number/${num.toString().charAt(i)}.png" width="80px" height="120px"/>`
+            }
+            timer.innerHTML = str;
+        }
+
+        function tClear() {
+            num=0;
+            timer.innerHTML = "";
+        }
     </script>
 </head>
 <body>
@@ -95,10 +113,12 @@
     <form name="myform">
         <input type="button" value="작동" onclick="staratC()" class="btn btn-info"/>
         <input type="button" value="정지" onclick="endC()" class="btn btn-danger"/>
+        <input type="button" value="타이머 초기화" onclick="tClear()" class="btn btn-success"/>
     </form>
     <hr/>
     <div id="demo"></div>
-    <div></div>
+    <hr/>
+    <div id="timer"></div>
 </div>
 </body>
 </html>

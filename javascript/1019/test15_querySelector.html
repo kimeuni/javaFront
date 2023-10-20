@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test14_querySelector.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script>
+        'use strict';
+        
+        window.addEventListener('DOMContentLoaded',function() { 
+
+            // querySelector를 이용한 선택
+            let productVar = document.querySelector(".product");  // ("#product")안에 id로 적었으면 # class면 .
+            let suVar = document.querySelectorAll(".su"); // querySelectorAll : .su의 클래스가 여러개일 경우 <<배열>>로 받아온다.
+
+            // 리스너로 해서 이벤트 처리 (감시자)
+            calcBtn.addEventListener('click', function() {
+                let product = productVar.value;
+                let su = 0;
+
+                for(let i=0; i<suVar.length; i++){ // suVar = 배열 // 배열의 길이만큼 돌아라..
+                    if(isNaN(suVar[i].value)) {
+                        alert("단가와 수량은 숫자만 입력해 주세요.")
+                        suVar[i].select();
+                        suVar[i].focus();
+                        return false;
+                    }
+                    su += Number(suVar[i].value);
+                } 
+
+                demo.innerHTML = `상품명 : ${product}, 전체 수량 : ${su}`
+            });
+        });
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <h2>상품가격 계산하기</h2>
+    <form name="myform">
+        <div>상품명
+            <input type="text" name="product" value="냉장고" autofocus class="form-control mb-3 product"/>
+        </div>
+        <div>1사분기 구매수량
+            <input type="text" name="su"  value="1" class="form-control mb-3 su"/>
+        </div> 
+        <div>2사분기 구매수량 
+            <input type="text" name="su"  value="2" class="form-control mb-3 su"/>
+        </div> 
+        <div>3사분기 구매수량 
+            <input type="text" name="su"  value="3" class="form-control mb-3 su"/>
+        </div> 
+        <div>4사분기 구매수량 
+            <input type="text" name="su"  value="4" class="form-control mb-3 su"/>
+        </div>
+        <div>
+            <input type="button" id="calcBtn" value="계산하기"  class="btn btn-success form-control"/>
+        </div>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+</div>
+</body>
+</html>
