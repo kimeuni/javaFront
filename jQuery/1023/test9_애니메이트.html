@@ -19,6 +19,7 @@
         let rank = 0;
         let ranks = "";
         let ranker = Array();
+        let str = "";
 
         // 순위 구해서 출력하기...
         $(function() {
@@ -27,9 +28,10 @@
             // },5000,function() {
             },a1,function() {
                 rank++
-                ranks = rank + "등 " + $('#atom1').text();
-                console.log(ranks);
-                ranker.push(rank);
+                ranks += rank + "등 " + $('#atom1').text()+"<br/>";
+                $('#demo').html(ranks)
+
+                ranker.push(ranks);
             }); // animate() : 움직여라.. 애니메이트
             $('#atom2').animate({
                 marginLeft: "400px",
@@ -37,21 +39,21 @@
                 // },5000,function() {
                 },a2,function() {
                 rank++
-                ranks = rank + "등 " + $('#atom2').text();
-                console.log(ranks);
-                ranker.push(rank);
+                ranks += rank + "등 " + $('#atom2').text()+"<br/>";
+                $('#demo').html(ranks)
+
+                ranker.push(ranks);
             }); 
             $('#atom3').animate({
                 marginLeft: "400px",
                 // },3000,function() {
                 },a3,function() {
                 rank++
-                ranks = rank + "등 " + $('#atom3').text();
-                console.log(ranks);
-                ranker.push(rank);
+                ranks += rank + "등 " + $('#atom3').text()+"<br/>";
+                $('#demo').html(ranks)
+
+                ranker.push(ranks);
             });
-            $('#demo').html(ranks);
-            console.log(ranker);
         });
 
 

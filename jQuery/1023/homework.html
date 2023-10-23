@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test8_2.html</title>
+    <title>homework.html</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -11,51 +11,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        .bgColor {
-            background-color: #ff0;
+        .colorCan {
+            background-color: lightgray;
         }
     </style>
     <script>
         'use strict';
-
         let today = new Date();
         let year = today.getFullYear();
-        let month = today.getMonth()+1;
+        let month = today.getMonth();
         let date = today.getDate();
-
-        let cnt =0;  
-
+        let arr = new Array;
+        let cnt=1;
+        
         $(function() {
-            let ymd = `${year}-${month}-${date}`;
-            $('#demo').html("오늘 날짜는 ? " + ymd)
-            console.log(ymd);
-
-            $('td').click(function() {   // td(열)을 클릭했을 때
-                if($(this).hasClass('bgColor') == true){
-                    $(this).removeClass('bgColor');
-                    cnt--
-                }  //hasClass : 클래스를 가지고 있는지 물어보는 멍령어
-                else {
-                    let cellText = eval($(this).text());
-                    // console.log(cellText);
-                    if(cellText < date){
-                        alert("이전 날짜는 선택할 수 없습니다.")
+            $('td').on('click',function() {
+                let num = Number($(this).text());
+                arr.push(num);
+                if(arr.length <= 2){
+                    // console.log(arr[0]);
+                    // console.log(arr.length);
+                    if($(this).hasClass('colorCan') == true){
+                        $(this).removeClass('colorCan');
                     }
                     else {
-                        $(this).addClass('bgColor')
-                        cnt++
+                        console.log(num);
+                        if(num < date){
+                            alert("이전 날짜는 선택할 수 없습니다.")
+                            arr.splice(this);
+                        }
+                        else{
+                            $(this).addClass('colorCan');
+                            if(arr.length == 2){
+                                for(let i=arr[0]; i<arr[1]; i++){
+                                    cnt++;
+                                    $(`td:contains(${i})`).addClass('colorCan')
+                                }
+                            }
+                        }
                     }
                 }
-                $('#demo').html(`현재 선택된 셀의 개수는 <font color='red'><b>${cnt}</b></font> 입니다.`)
+                else{
+                    alert("2개까지 선택가능합니다.")
+                }
+                $('#demo').html(`<p><font size = "5"><b>*** 예약 확인 ***</b></font></p>
+                예약하신 총 일수는 <font color='red'><b>${cnt}</b></font>일 입니다.<br/>
+                예약하신 날 : ${arr[0]}~${arr[1]}`)
             });
-
-        });
+        })
+        
     </script>
 </head>
 <body>
 <p><br/></p>
 <div class="container">
-    <h2>표의 내용을 클릭하시면 선택/취소 됩니다.</h2>
+    <h2>예약할 날짜 기간을 선택하세요.</h2>
     <p>오늘 날짜 이전은 선택하실 수 없습니다.</p>
     <table class="table table-bordered text-center">
         <tr>
@@ -103,6 +113,8 @@
     </table>
     <hr/>
     <div id="demo"></div>
+    <hr/>
+    <button type="button" onclick="location.reload()">다시 선택</button>
 </div>
 </body>
 </html>
