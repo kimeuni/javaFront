@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2.html</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        #intro {
+            width: 300px;
+            height: 250px;
+            border: 1px solid gray;
+            overflow: auto;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        let chai   // 전역변수로 놔야 버튼을 누를 때마다 사용할 수 있다...
+
+        'use strict';
+        $(function() {
+            let boxHeight = $('#intro').height();
+            let scrollHeight = $('#intro').prop('scrollHeight');  // prop : 속성값을 가져오거나 
+            let scrollTop = $('#intro').scrollTop();
+
+            chai = scrollHeight - boxHeight
+
+            console.log("박스의 높이 : ",boxHeight);
+            console.log("스크롤바의 높이 : ",scrollHeight);
+            console.log("스크롤바의 시작위치 : ",scrollTop);
+            console.log("차이 : ",chai);
+
+            // <<영역의 끝으로>> 버튼을 눌렀을 시...
+            $('#btnEnd').on('click',function() {
+                $('#intro').scrollTop(chai);
+            });
+            // <<영역의 처음으로>> 버튼을 눌렀을시...
+            $('#btnTop').click(function() {
+                $('#intro').scrollTop(0);
+            });
+        });
+
+        function scrollBottom() {
+
+        }
+        function scrollTopCheack() {
+
+        }
+    </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+    <div>
+        <input type="button" value="영역의 끝으로" id="btnEnd" onclick="scrollBottom()" class="btn btn-success"/>
+        <input type="button" value="영역의 처음으로" id="btnTop" onclick="scrollTopCheack()" class="btn btn-primary"/>
+    </div>
+    <hr/>
+    <h2>자기소개서</h2>
+    <div id="intro">
+        <div>1자기소개서를 작성했습니다.</div>
+        <div>2자기소개서를 작성했습니다.</div>
+        <div>3자기소개서를 작성했습니다.</div>
+        <div>4자기소개서를 작성했습니다.</div>
+        <div>5자기소개서를 작성했습니다.</div>
+        <div>6자기소개서를 작성했습니다.</div>
+        <div>7자기소개서를 작성했습니다.</div>
+        <div>8자기소개서를 작성했습니다.</div>
+        <div>9자기소개서를 작성했습니다.</div>
+        <div>10자기소개서를 작성했습니다.</div>
+        <div>11자기소개서를 작성했습니다.</div>
+        <div>12자기소개서를 작성했습니다.</div>
+        <div>13자기소개서를 작성했습니다.</div>
+        <div>14자기소개서를 작성했습니다.</div>
+        <div>15자기소개서를 작성했습니다.</div>
+        <div>16자기소개서를 작성했습니다.</div>
+        <div>17자기소개서를 작성했습니다.</div>
+        <div>18자기소개서를 작성했습니다.</div>
+        <div>19자기소개서를 작성했습니다.</div>
+        <div>20자기소개서를 작성했습니다.</div>
+        <div>21자기소개서를 작성했습니다.</div>
+        <div>22자기소개서를 작성했습니다.</div>
+        <div>23자기소개서를 작성했습니다.</div>
+        <div>24자기소개서를 작성했습니다.</div>
+        <div>25자기소개서를 작성했습니다.</div>
+        <div>26자기소개서를 작성했습니다.</div>
+        <div>27자기소개서를 작성했습니다.</div>
+        <div>28자기소개서를 작성했습니다.</div>
+        <div>29자기소개서를 작성했습니다.</div>
+        <div>30자기소개서를 작성했습니다.</div>
+        <div>31자기소개서를 작성했습니다.</div>
+        <div>32자기소개서를 작성했습니다.</div>
+        <div>33자기소개서를 작성했습니다.</div>
+        <div>34자기소개서를 작성했습니다.</div>
+        <div>35자기소개서를 작성했습니다.</div>
+        <div>36자기소개서를 작성했습니다.</div>
+        <div>37자기소개서를 작성했습니다.</div>
+        <div>38자기소개서를 작성했습니다.</div>
+        <div>39자기소개서를 작성했습니다.</div>
+        <div>40자기소개서를 작성했습니다.</div>
+    </div>
+</div>
+</body>
+</html>
